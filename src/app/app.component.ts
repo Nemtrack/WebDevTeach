@@ -12,8 +12,10 @@ import { RouterOutlet } from '@angular/router';
   }`,
 })
 export class AppComponent {
+
   serverStatus = 'offline';
   previousServerStatus = 'online';
+  showLegjobbRapper = false;
   getColor() {
     return this.serverStatus === 'online' ? 'green' : 'red';
   }
@@ -22,9 +24,11 @@ export class AppComponent {
     if (this.serverStatus === 'offline') {
       this.serverStatus = 'online';
       this.previousServerStatus = 'offline';
+      this.showLegjobbRapper = true;
     } else {
       this.serverStatus = 'offline';
       this.previousServerStatus = 'online';
+      this.showLegjobbRapper = false;
     }
   }
 }
