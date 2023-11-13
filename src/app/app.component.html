@@ -6,7 +6,19 @@
 </h1>
 
 <h1>@if(showLegjobbRapper){Legjobb rapper: T. Danny!}</h1>
+<h1 *ngIf="showLegjobbRapper">Legjobb rapper: T. Danny!</h1>
 
 <button (click)="onSwitchServer()">
   Switch server {{ previousServerStatus }}
 </button>
+<hr />
+<input [(ngModel)]="newRapper" type="text" />
+<button (click)="onAddNewRapper()">Add new Rapper!</button>
+
+<div>
+  @for(rapper of worstRappers; track rapper){
+  <div>{{ rapper }}</div>
+  }
+</div>
+
+<div *ngFor="let rapper of worstRappers">{{ rapper }}</div>
